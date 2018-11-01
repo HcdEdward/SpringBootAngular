@@ -1,8 +1,5 @@
 package com.example.vo.jsonVO;
 
-import com.example.vo.jsonVO.Result;
-import com.example.vo.jsonVO.ResultCodeEnum;
-
 public class ResultGenerator {
     private static final String DEFAULT_SUCCESS_MESSAGE = "SUCCESS";
 
@@ -31,4 +28,5 @@ public class ResultGenerator {
                 .setCode(ResultCodeEnum.UNAUTHORIZED)
                 .setMessage("权限不足！");
     }
+
 }
