@@ -4,7 +4,7 @@ server:
 spring:
     datasource:
         name: test
-        url: jdbc:mysql://127.0.0.1:3306/mytest
+        url: jdbc:mysql://127.0.0.1:3306/spring-ag-shop
         username: root
         password:
         # 使用druid数据源

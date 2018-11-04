@@ -1,18 +1,18 @@
 package com.example.vo.jsonVO;
 
 public class Result<T> {
-    private ResultCodeEnum code;
+    private int code;       //ResultCodeEnum 可以申明为枚举类型
     private String message;
     private  T data;
 
-    public ResultCodeEnum getCode() {
+    public int getCode() {
         return code;
     }
 
     public Result() {
     }
 
-    public Result setCode(ResultCodeEnum resultCode) {
+    public Result setCode(int resultCode) {
         this.code = resultCode;
         return this;
     }

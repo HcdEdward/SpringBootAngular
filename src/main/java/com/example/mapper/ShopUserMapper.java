@@ -1,7 +1,9 @@
 package com.example.mapper;
 
 import com.example.model.ShopUser;
+import org.springframework.stereotype.Component;
 
+@Component
 public interface ShopUserMapper {
     int deleteByPrimaryKey(Integer userid);
 
@@ -14,4 +16,6 @@ public interface ShopUserMapper {
     int updateByPrimaryKeySelective(ShopUser record);
 
     int updateByPrimaryKey(ShopUser record);
+
+    ShopUser findShopUserByUsername(String username);
 }
