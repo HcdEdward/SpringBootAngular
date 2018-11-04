@@ -14,7 +14,7 @@ import java.util.Date;
  * @desc JWT工具类
  **/
 public class JwtUtil {
-    private static final long EXPIRE_TIME = 5 * 60 * 1000;      //设置过期时间
+    private static final long EXPIRE_TIME = 30 * 60 * 1000;      //设置过期时间
 
     /**
      * 校验token是否正确

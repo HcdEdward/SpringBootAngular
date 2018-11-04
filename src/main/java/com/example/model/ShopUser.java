@@ -1,6 +1,6 @@
 package com.example.model;
 
-public class shop_user {
+public class ShopUser {
     private Integer userid;
 
     private String email;
