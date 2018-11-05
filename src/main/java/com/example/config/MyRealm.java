@@ -45,7 +45,7 @@ public class MyRealm extends AuthorizingRealm {
      * 默认使用此方法进行用户名正确与否验证，错误抛出异常即可。
      */
     @Override
-    protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken auth){
+    protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken auth) throws MyException{
         String token = (String) auth.getCredentials();
         // 解密获得username，用于和数据库进行对比
         String username = JwtUtil.getUsername(token);
@@ -54,10 +54,10 @@ public class MyRealm extends AuthorizingRealm {
             throw new MyException("000","token 无效","doGetAuthenticationInfo","重新注册证书！");
         }
         if (shopUser == null) {
-            throw new AuthenticationException("用户不存在!");
+            throw new MyException("000","用户不存在","doGetAuthenticationInfo","用户不存在！");
         }
         if (!JwtUtil.verify(token, username, shopUser.getPassword())) {
-            throw new AuthenticationException("用户名或密码错误");
+            throw new MyException("000","用户名或密码错误","doGetAuthenticationInfo","用户名或密码错误！");
         }
         return new SimpleAuthenticationInfo(token, token, "my_realm");
     }
