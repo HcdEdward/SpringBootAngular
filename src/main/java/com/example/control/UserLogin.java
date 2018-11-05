@@ -19,7 +19,7 @@ public class UserLogin {
         if (shopUser == null) {
             return ResultGenerator.genFailResult("密码错误！");
         }
-        String Token = JwtUtil.sign(username, password);
-        return ResultGenerator.genSuccessResult().setData(Token);
+        String token = JwtUtil.sign(username, password);
+        return ResultGenerator.genSuccessResult().setData(token);
     }
 }
